@@ -1,0 +1,178 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=27680, tid=0x0000000000007008
+#
+# JRE version:  (8.0_281-b09) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.281-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002550f540000):  JavaThread "Unknown thread" [_thread_in_vm, id=28680, stack(0x00000084df100000,0x00000084df200000)]
+
+Stack: [0x00000084df100000,0x00000084df200000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x32e5b9]
+V  [jvm.dll+0x275012]
+V  [jvm.dll+0x275cbd]
+V  [jvm.dll+0x26c6f5]
+V  [jvm.dll+0x509d]
+V  [jvm.dll+0x3c8d4d]
+V  [jvm.dll+0x3c9aca]
+V  [jvm.dll+0x3c5a67]
+V  [jvm.dll+0xfcaaf]
+V  [jvm.dll+0x209a1b]
+V  [jvm.dll+0x2383d7]
+V  [jvm.dll+0x162566]
+C  [java.exe+0x2312]
+C  [java.exe+0x15f54]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x000002550f540000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=28680, stack(0x00000084df100000,0x00000084df200000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000083600000, size: 1994 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 37888K, used 655K [0x00000000d6780000, 0x00000000d9180000, 0x0000000100000000)
+  eden space 32768K, 2% used [0x00000000d6780000,0x00000000d6823d80,0x00000000d8780000)
+  from space 5120K, 0% used [0x00000000d8c80000,0x00000000d8c80000,0x00000000d9180000)
+  to   space 5120K, 0% used [0x00000000d8780000,0x00000000d8780000,0x00000000d8c80000)
+ ParOldGen       total 86016K, used 0K [0x0000000083600000, 0x0000000088a00000, 0x00000000d6780000)
+  object space 86016K, 0% used [0x0000000083600000,0x0000000083600000,0x0000000088a00000)
+ Metaspace       used 777K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000025520250000,0x0000025520640000] byte_map_base: 0x000002551fe35000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000072536ff0
+ Begin Bits: [0x00000255208e0000, 0x0000025522808000)
+ End Bits:   [0x0000025522808000, 0x0000025524730000)
+
+Polling page: 0x000002550f6b0000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000025510e90000, 0x0000025511100000, 0x000002551fe90000]
+ total_blobs=58 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.020 loading class java/lang/Short
+Event: 0.020 loading class java/lang/Short done
+Event: 0.020 loading class java/lang/Integer
+Event: 0.020 loading class java/lang/Integer done
+Event: 0.020 loading class java/lang/Long
+Event: 0.020 loading class java/lang/Long done
+Event: 0.020 loading class java/lang/NullPointerException
+Event: 0.021 loading class java/lang/NullPointerException done
+Event: 0.021 loading class java/lang/ArithmeticException
+Event: 0.021 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff7a3070000 - 0x00007ff7a30b7000 	C:\Program Files\Java\jdk1.8.0_281\bin\java.exe
+0x00007ffcc3590000 - 0x00007ffcc3785000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffcc2060000 - 0x00007ffcc211d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffcc0fe0000 - 0x00007ffcc12a8000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffcc1680000 - 0x00007ffcc172c000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffcc1d40000 - 0x00007ffcc1dde000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffcc2120000 - 0x00007ffcc21bb000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffcc1c10000 - 0x00007ffcc1d3b000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffcc1de0000 - 0x00007ffcc1f80000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffcc13d0000 - 0x00007ffcc13f2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffcc3470000 - 0x00007ffcc349a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffcc1400000 - 0x00007ffcc150b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffcc12b0000 - 0x00007ffcc134d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffcc0d30000 - 0x00007ffcc0e30000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffca1a70000 - 0x00007ffca1d0a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.844_none_ca00b6081b84eb1d\COMCTL32.dll
+0x00007ffcc3520000 - 0x00007ffcc3550000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffc9eab0000 - 0x00007ffc9eac5000 	C:\Program Files\Java\jdk1.8.0_281\jre\bin\vcruntime140.dll
+0x00007ffc82b90000 - 0x00007ffc82c2b000 	C:\Program Files\Java\jdk1.8.0_281\jre\bin\msvcp140.dll
+0x0000000071d50000 - 0x00000000725af000 	C:\Program Files\Java\jdk1.8.0_281\jre\bin\server\jvm.dll
+0x00007ffcc2050000 - 0x00007ffcc2058000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffca4c80000 - 0x00007ffca4ca7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffcb6db0000 - 0x00007ffcb6dba000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffca2510000 - 0x00007ffca2519000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffcc1940000 - 0x00007ffcc19ab000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffcbf5a0000 - 0x00007ffcbf5b2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffca2500000 - 0x00007ffca2510000 	C:\Program Files\Java\jdk1.8.0_281\jre\bin\verify.dll
+0x00007ffc92a30000 - 0x00007ffc92a5b000 	C:\Program Files\Java\jdk1.8.0_281\jre\bin\java.dll
+0x00007ffc8fcf0000 - 0x00007ffc8fd08000 	C:\Program Files\Java\jdk1.8.0_281\jre\bin\zip.dll
+0x00007ffcbe9d0000 - 0x00007ffcbebb4000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+0x00007ffcc1350000 - 0x00007ffcc13d0000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: hotel.management.system.AddCustomer
+java_class_path (initial): C:\Program Files\NetBeans 8.0\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar;C:\Users\Admin\Downloads\rs2xml.jar;D:\urvima'amhw\Hotel Management System\build\classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files\Java\jdk1.8.0_281\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_281\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.2\bin;;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\MinGW\bin;C:\Program Files\Java\jdk1.8.0_281\bin;
+USERNAME=Admin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 126 Stepping 5, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.928)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 126 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8161072k(1701256k free), swap 33326896k(5616k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.281-b09) for windows-amd64 JRE (1.8.0_281-b09), built on Dec  9 2020 13:54:07 by "" with MS VC++ 15.9 (VS2017)
+
+time: Tue Jun  1 01:20:15 2021
+timezone: India Standard Time
+elapsed time: 0.034927 seconds (0d 0h 0m 0s)
+

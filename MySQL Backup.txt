@@ -1,0 +1,58 @@
+show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> create database projecthms;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| projecthms         |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use projecthms;
+Database changed
+mysql> create table login(username varchar(30) , password varchar(30));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into login values('admin','12345');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from login;
++----------+----------+
+| username | password |
++----------+----------+
+| admin    | 12345    |
++----------+----------+
+1 row in set (0.00 sec)
+
+mysql> create table employee(name varchar(30) , age varchar(10) , gender varchar(15) , job varchar(30) , salary varchar(30) ,phone varchar(15) , aadhar varchar(15) , email varchar(30));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table room(room_number varchar(10) , available varchar(20) , status varchar(20) , price varchar(20) , bed_type varchar(20));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table OrderStatus(room_number varchar(20) , time varchar(20) , type varchar(30) , name varchar(40) , quantity varchar(25) , order_status varchar(30) );
+Query OK, 0 rows affected (0.07 sec)
+
+---------------------------------------------------------------------
+-------------------------------------------------------------------
+ alter table room change room room_number varchar(10);
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+--------------------------------------------------------------------
+----------------------------------------------------------------------
